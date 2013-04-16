@@ -31,7 +31,7 @@ if($_POST)
 	?>");
 		@fclose($fp);
 	
-		require_once('handlers/core.php');
+		require_once('handlers/lightzr.php');
 		lz::$t='admin';
 		$db=lz::h('db');
 		$modules=array();

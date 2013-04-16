@@ -3,12 +3,12 @@
 + ----------------------------------------------------------------------------+
 |     LightZr Amazon Script
 |
-|     ©Positron 2011
-|     http://lightzr.com, http://seo.phukettech.com
-|     positron.th@gmail.com
+|     ©Positron 2013
+|     http://boxza.com
+|     positron@boxza.com
 |
-|     $Revision: 3.0.0 $
-|     $Date: 2011/19/19 19:51:00 $
+|     $Revision: 3.0 RC1 $
+|     $Date: 2013/04/17 04:31:00 $
 |     $Author: Positron $
 +-----------------------------------------------------------------------------+
 */

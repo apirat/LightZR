@@ -4,7 +4,7 @@
 
 header('Content-type: text/html; charset=utf-8');
 
-require_once('handlers/core.php');			
+require_once('handlers/lightzr.php');			
 lz::get();
 
 $db=lz::h('db');
