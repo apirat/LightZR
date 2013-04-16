@@ -1,0 +1,14 @@
+<?php
+if(is_numeric(lz::$f[0]))
+{
+	require_once(dirname(__FILE__).'/admin.product.search.php');
+}
+elseif(in_array(lz::$f[0],array('setting','list','csv','pgroup')))
+{
+	require_once(dirname(__FILE__).'/admin.product.'.lz::$f[0].'.php');
+}
+else
+{
+	require_once(dirname(__FILE__).'/admin.product.home.php');
+}
+?>

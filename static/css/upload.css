@@ -1,0 +1,17 @@
+fieldset.flash{margin:10px 0px;}
+.flash legend{font-size:12px;}
+.progressWrapper{overflow: hidden;}
+.progressContainer {margin: 5px;padding: 4px;border: solid 1px #E8E8E8;background: #F8F8F8;overflow:hidden; text-align:left;}
+.red{border: solid 1px #B50000;}
+.blue{border: solid 1px #0099FF;}
+.green{border: solid 1px #66CC00;}
+.progressName{font-size: 8pt;font-weight: bold;color: #555555;width: 323px;height: 14px;text-align: left;white-space: nowrap;overflow:visible;}
+.progressBarInProgress,.progressBarComplete,.progressBarError{font-size: 0px;width: 0%;height: 5px; overflow:hidden;background:#0080FF;margin:0px;}
+.progressBarOut{border:1px solid #F0F0F0; background:#FFFFFF;height: 5px; overflow:hidden; padding:0px;}
+.progressBarComplete {width:100%;background-color:#66CC00;}
+.progressBarError {width:100%;background-color: red;}
+.progressBarStatus {margin-top: 2px;width: 337px;font-size: 7pt;font-family: Verdana;text-align: left;white-space: nowrap;}
+a.progressCancel,a.progressCancel:link,a.progressCancel:active,a.progressCancel:visited,a.progressCancel:hover{font-size: 0px;display:block;height: 14px;width: 14px;background:url(../images/admin/close.gif) center center no-repeat;;float: right;}
+a.progressCancel:hover {background-position: 0px 0px;}
+
+.swfupload{border: solid 1px #7FAAFF; background-color: #C5D9FF;}

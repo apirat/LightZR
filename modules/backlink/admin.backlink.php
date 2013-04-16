@@ -1,0 +1,10 @@
+<?php
+if(in_array(lz::$f[0],array('post','category')))
+{
+	require_once(dirname(__FILE__).'/admin.backlink.'.lz::$f[0].'.php');
+}
+else
+{
+	require_once(dirname(__FILE__).'/admin.backlink.home.php');
+}
+?>

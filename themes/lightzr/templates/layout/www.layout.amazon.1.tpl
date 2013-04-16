@@ -1,0 +1,2 @@
+<!--border=no-->
+<iframe src="http://rcm.amazon.com/e/cm?t=<?php echo lz::$c['awstag']?>&o=1&p=12&l=st1&mode=<?php echo urlencode(lz::$s['cmode'])?>&search=<?php echo urlencode(lz::$s['search']?lz::$s['search']:lz::$s['title'])?>&fc1=000000&lt1=&lc1=3366FF&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="300" height="250" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>

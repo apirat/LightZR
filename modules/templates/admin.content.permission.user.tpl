@@ -1,0 +1,2 @@
+<h1 style="margin:100px 0px 20px; color:#990000; text-align:center">บุคคลทั่วไป ไม่สามารถเข้าใช้งานในส่วนนี้ได้</h1>
+<h3 style="margin:0px 0px 100px; text-align:center">กรุณา <a href="<?php echo QUERY?>">คลิกที่นี่</a> เพื่อไปยังหน้าแรกเว็บไซต์</h1>

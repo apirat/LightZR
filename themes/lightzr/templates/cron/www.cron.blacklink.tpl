@@ -1,0 +1,2 @@
+<div align="center"><a href="<?php echo $this->product['url']?>" title="<?php echo htmlspecialchars($this->product['title'])?>"><img src="<?php echo $this->product['img']?>" alt="<?php echo htmlspecialchars($this->product['title'])?>" /></a></div>
+<a href="<?php echo $this->category['url']?>" title="<?php echo htmlspecialchars($this->category['title'])?>"><strong><?php echo $this->category['title']?></strong></a> <?php echo $this->content?>

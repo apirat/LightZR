@@ -1,0 +1,1 @@
+<li><a href="<?php echo PATHMIN.$this->menu['link']?>"><img src="<?php echo $this->menu['icon']?>" /> <?php echo $this->menu['name']?></a></li>

@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /cache/
+Disallow: /cgi-bin/
+Disallow: /css/
+Disallow: /js/
+Disallow: /images/
+Disallow: /flash/
+Disallow: /handlers/
+Disallow: /modules/
+Disallow: /templates/
+Disallow: /themes/

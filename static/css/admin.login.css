@@ -1,0 +1,17 @@
+*{ margin: 0; padding: 0; }
+body{ font-family:tahoma; font-size:11px; background:#000000; color: #3a3a3a;  }
+.clear{ clear: both; }
+a{color:#666; text-decoration:none}
+#outter{text-align:center;padding:80px 0px 0px 0px; }
+#inner{border-top:1px solid #000000;border-bottom:1px solid #000000; background:#FFFFFF; text-align:center; padding:50px 0px}
+#content{ width:450px; margin:0px auto}
+#header{text-align:left; width:450px; margin:0px auto; height:70px;position:relative; background:#000000 url(../images/logoadmin.png) left top no-repeat;}
+fieldset{border:1px solid #CCCCCC; padding:10px 5px; }
+#boxleft{ width:120px; margin-right:5px;float:left; height:120px; background:url(../images/computer.png) center center no-repeat}
+#boxright{width:300px; float:left; text-align:left}
+label{width:70px; text-align:right; float:left; margin:8px 5px 0px 0px}
+#username{ float:left;width:170px;font-size:12px;border:1px solid #cccccc;background:#FFFFFF url(../images/user.gif) 5px center no-repeat;margin-right:3px;padding:5px 5px 5px 25px;margin-bottom:5px;}
+#password{ float:left;width:170px;font-size:12px;border:1px solid #cccccc;background:#FFFFFF url(../images/password.gif) 5px center no-repeat;padding:5px 5px 5px 25px;margin-right:3px;margin-bottom:5px;}
+#btnlogin{width:80px;font-size:12px;border:1px solid #999999; background:#CCCCCC;margin:3px 5px 5px 80px; cursor:pointer;}
+#error{font-weight:bold; text-align:center; color:#F00}
+.border{background:url(../images/loginborder.gif) left top repeat; height:10px; overflow:hidden}

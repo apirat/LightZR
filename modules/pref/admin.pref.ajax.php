@@ -1,0 +1,116 @@
+<?php
+function save($name,$value,$input)
+{
+	$ajax=lz::h('ajax');
+	$db=lz::h('db');
+	$html=lz::h('html');
+	$value=trim($value);
+	if(in_array($name,array('fbappid','fbappsecret','order','by','theme','sitename','title','disclaimer','description','keywords','meta','zone','awskey','awssecret','awstag','sub','antiindex','referer','bot','click','button','star','bldelay','pddelay','pgdelay','cron','homestar','homeprice','rrdelay','rss','sitemap','image','prefix','pinfo','pstore','pcompare','preview','linkword','apdelay','apdlang','aprlang','apping','aptype','rwdelay','asindelay','pgroup','spuser','sppass','twdelay','twuser','twpass','twformat')))
+	{
+		if($name=='apdlang'||$name=='aprlang')
+		{
+			$v=explode(',',$value);
+			$z=array();
+			for($i=0;$i<count($v);$i++)
+			{
+				$k=strtolower(trim($v[$i]));
+				if(in_array($k,array('af','sq','ar','be','bg','ca','hr','cs','da','nl','en','et','tl','fi','fr','gl','de','el','ht','iw','hi','hu','is','id','ga','it','ja','ko','lv','lt','mk','ms','mt','no','fa','pl','pt','ro','ru','sr','sk','sl','es','sw','sv','th','tr','uk','vi','cy','yi')))
+				{
+					$z[]=$k;
+				}
+			}
+			$value=implode(', ',$z);
+		}
+		
+		lz::set($name,$value);
+		lz::get();
+		if($name=='zone')
+		{
+			list($text,$input)=$html->form($name,lz::$c[$name],$input,false,array('ca'=>'Canada (ca)','com'=>'America (com)','co.uk'=>'England (co.uk)','de'=>'Germany (de)','fr'=>'France (fr)','jp'=>'Japan (jp)'));
+			$ajax->html($name,$text,$input);	
+		}
+		elseif($name=='order')
+		{
+			list($text,$input)=$html->form($name,lz::$c[$name],$input,false,array('title'=>'ชื่อสินค้า','avg'=>'ดาว(rating)','price'=>'ราคาเริ่มต้นสินค้า','saleprice'=>'ราคาพิเศษ','added'=>'เวลาที่เพิ่มข้อมูลครั้งแรก','lastupdate'=>'เวลาที่อัพเดทข้อมูลล่าสุด'));
+			$ajax->html($name,$text,$input);			
+		}
+		elseif($name=='by')
+		{
+			list($text,$input)=$html->form($name,lz::$c[$name],$input,false,array('desc'=>'หลังไปหน้า(มากไปน้อย)','asc'=>'หน้าไปหลัง(น้อยไปมาก)'));
+			$ajax->html($name,$text,$input);			
+		}
+		elseif(in_array($name,array('referer','bot','click')))
+		{
+			list($text,$input)=$html->form($name,lz::$c[$name],$input,false,array('0'=>'ไม่เก็บ','1'=>'เก็บ'));
+			$ajax->html($name,$text,$input);			
+		}
+		elseif($name=='sub')
+		{
+			list($text,$input)=$html->form($name,lz::$c[$name],'select',array('full'=>true),array('0'=>'1. Sub Folder  - domain.com/keyword/product','1'=>'2. Sub Folder - domain.com/product','2'=>'3. Sub Domain - keyword.domain.com/product'));
+			$ajax->html($name,$text,$input);			
+		}
+		elseif($name=='antiindex')
+		{
+			list($text,$input)=$html->form($name,lz::$c[$name],'select',array('full'=>true),array('0'=>'ปิดการทำงาน','1'=>'ตั้ง nofollow สำหรับสินค้าที่บอทไม่เึคยเข้า','2'=>'ตั้ง nofollow และ redirect ไปยังหน้ารวมสินค้า สำหรับสินค้าที่บอทไม่เึคยเข้า','3'=>'ตั้ง nofollow สำหรับสินค้าที่ไม่ได้ rewrite หรือไม่ได้เพิ่มรายละเอียดสินค้าใหม่'));
+			$ajax->html($name,$text,$input);			
+		}
+		elseif($name=='rss'||$name=='sitemap')
+		{
+			list($text,$input)=$html->form($name,lz::$c[$name],'select',array('full'=>true),array('0'=>'ปิดการทำงาน','1'=>'เปิดการทำงาน'));
+			$ajax->html($name,$text,$input);			
+		}
+		elseif($name=='aptype')
+		{
+			list($text,$input)=$html->form($name,lz::$c[$name],'select',array('full'=>true),array('0'=>'ปิดการทำงาน','1'=>'รายละเอียดสินค้า','2'=>'ชื่อสินค้า + รายละเอียดสินค้า','3'=>'รายละเอียดสินค้า + ความคิดเห็นของลูกค้า','4'=>'ชื่อสินค้า + รายละเอียดสินค้า + ความคิดเห็นของลูกค้า'));
+			$ajax->html($name,$text,$input);			
+		}
+		elseif($name=='apping')
+		{
+			list($text,$input)=$html->form($name,lz::$c[$name],'select',array('full'=>true),array('0'=>'ปิดการทำงาน','1'=>'เปิดการทำงานทุกครั้ง','2'=>'เปิดการทำงานแบบสุ่ม(ใช้งาน/ไม่ใช้งาน)'));
+			$ajax->html($name,$text,$input);			
+		}
+		elseif($name=='image')
+		{
+			list($text,$input)=$html->form($name,lz::$c[$name],'select',array('full'=>true),array('0'=>'ปิดการทำงาน','1'=>'ดึงเฉพาะภาพเล็กสุด(list)และภาพใหญ่สุด(view)','2'=>'ดึงเฉพาะภาพขนาดกลาง(gallery)และภาพใหญ่สุด(view)'));
+			$ajax->html($name,$text,$input);			
+		}
+		elseif($name=='apdelay'||$name=='rwdelay'||$name=='bldelay'||$name=='pgdelay'||$name=='asindelay'||$name=='twdelay')
+		{
+			list($text,$input)=$html->form($name,lz::$c[$name],'select',array('full'=>true),array('0'=>'ปิดการทำงาน','1'=>'1 นาที (สำหรับโฮสที่ตั้ง cron ได้ 1นาที)','2'=>'2 นาที (สำหรับโฮสที่ตั้ง cron ได้น้อยกว่าหรือเท่ากับ 2นาที)','5'=>'5 นาที (สำหรับโฮสที่ตั้ง cron ได้น้อยกว่าหรือเท่ากับ 5นาที)','10'=>'10 นาที (สำหรับโฮสที่ตั้ง cron ได้น้อยกว่าหรือเท่ากับ 10นาที)','15'=>'15 นาที','30'=>'30 นาที','30'=>'1 ชม','120'=>'2 ชม','180'=>'3 ชม','360'=>'6 ชม','720'=>'12 ชม','1080'=>'18 ชม','1440'=>'24 ชม'));
+			$ajax->html($name,$text,$input);			
+		}
+		elseif($name=='theme')
+		{
+			$theme=array();
+			$dh=@opendir(ROOT.'themes/');
+			while($file=readdir($dh))
+			{
+				if(!in_array($file,array('.','..')))
+				{
+					if(is_dir(ROOT.'themes/'.$file))
+					{
+						$theme[$file]=ucfirst($file);
+					}
+				}
+			}
+			list($text,$input)=$html->form($name,lz::$c[$name],'select',array('full'=>true),$theme);
+			$ajax->html($name,$text,$input);
+			//admin.style.ajax.php
+			
+			define('STYLEID',lz::$c[$name]);
+			require_once(MODULES.'style/admin.style.function.php');
+			if(!$style=$db->getrow('select * from style where theme=?',array(STYLEID)))
+			{
+				restorefile();
+			}
+			savefile();
+		}
+		else
+		{
+			list($text,$input)=$html->form($name,lz::$c[$name],$input);
+			$ajax->html($name,$text,$input);
+		}
+		lz::h('cache')->clean();
+	}
+}
+?>

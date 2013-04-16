@@ -1,0 +1,2 @@
+<h1 style="margin:100px 0px 20px; color:#990000; text-align:center">รหัสสมาชิกของคุณ ไม่สามารถเข้าใช้งานระบบในส่วนนี้ได้</h1>
+<h3 style="margin:0px 0px 100px; text-align:center">กรุณา <a href="<?php echo PATHMIN?>">คลิกที่นี่</a> เพื่อไปยังหน้าแรกของระบบควบคุมเว็บไซต์</h1>
